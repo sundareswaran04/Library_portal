@@ -2081,10 +2081,12 @@ const data_base=[
 		"Name" : "  KALEESWARI S"
 	}
 ]
-
+const popup_div=document.getElementById('Popup');
 
 
 function entry_form(){
+	document.getElementById('admin_pass').value="";
+	popup_div.style.display='none'
   document.getElementById("entry").style.display="flex";
   document.getElementById("return").style.display="none";
   document.getElementById("add_student").style.display="none";
@@ -2094,6 +2096,8 @@ function entry_form(){
 }
 entry_form();
 return_form=()=>{
+	document.getElementById('admin_pass').value="";
+	popup_div.style.display='flex'
   document.getElementById("entry").style.display="none";
   document.getElementById("return").style.display="flex";
   document.getElementById("add_student").style.display="none";
@@ -2102,6 +2106,8 @@ return_form=()=>{
   document.getElementById("results").style.display="none";
 }
 add_student_form=()=>{
+	document.getElementById('admin_pass').value="";
+	popup_div.style.display='flex'
   document.getElementById("entry").style.display="none";
   document.getElementById("return").style.display="none";
   document.getElementById("add_student").style.display="flex";
@@ -2110,6 +2116,8 @@ add_student_form=()=>{
   document.getElementById("results").style.display="none";
 }
 add_book_form=()=>{
+	document.getElementById('admin_pass').value="";
+	popup_div.style.display='flex'
   document.getElementById("entry").style.display="none";
   document.getElementById("return").style.display="none";
   document.getElementById("add_student").style.display="none";
@@ -2118,6 +2126,8 @@ add_book_form=()=>{
   document.getElementById("results").style.display="none";
 }
 taken_data=()=>{
+	document.getElementById('admin_pass').value="";
+	popup_div.style.display='flex'
   document.getElementById("entry").style.display="none";
   document.getElementById("return").style.display="none";
   document.getElementById("add_student").style.display="none";
@@ -2125,8 +2135,17 @@ taken_data=()=>{
   document.getElementById("database").style.display="flex";
   document.getElementById("results").style.display="none";
 }
+admin_check=()=>{
+	
+	const pass='Admin@123';
+	const Pass_value=document.getElementById('admin_pass').value;
+	if(pass==Pass_value){
+		popup_div.style.display='none';
+	}
+}
 
 show_results=()=>{
+	document.getElementById('admin_pass').value="";
   document.getElementById("results").innerHTML="";
   document.getElementById("entry").style.display="none";
   document.getElementById("return").style.display="none";
