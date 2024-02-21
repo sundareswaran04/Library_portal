@@ -1,0 +1,22 @@
+<!-- search_results.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <% console.log(search_results); %> <!-- Debug statement -->
+    <% if (search_results.length === 0) { %>
+        <p>No results found.</p>
+    <% } else { %>
+        <ul>
+            <% search_results.forEach(student => { %>
+                <li>Roll No: <%= student.Rollno %>, Name: <%= student.Name %></li>
+            <% }); %>
+        </ul>
+    <% } %>
+</body>
+</html>
